@@ -18,8 +18,12 @@ editor: Larry Ohaka
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="crossorigin="anonymous"></script>
     <script src="./script.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css" media="screen">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
 
+<link rel="stylesheet" type="text/css" href="main.css" media="screen">
     </head>
   
     <body>
@@ -202,10 +206,44 @@ editor: Larry Ohaka
             Like its counterparts at other global financial institutions,
             the DB CISO is reviewing its existing capability models and considering enhancements to address not only changes in the risk environment, but also strategic business and management challenges. Specific factors requiring capability development include: cybersecurity risks that affect corporate performance, pressures to deliver financial and operating efficiencies across stove-piped IT and engineering, and stakeholder management.</p></div></div></div>
                <!--career 4 -->    
-        <div class="perf3"><h3>Internship</h3><div class="overly"><div class="past-p"><p style="line-height: 20px;">ZRA assisted in the development of DB’s strategy for overseeing and managing the most complex IT risks.
+        <div class="perf4"><h3>Internship</h3><div class="overly"><div class="past-p"><p style="line-height: 20px;">ZRA assisted in the development of DB’s strategy for overseeing and managing the most complex IT risks.
             Like its counterparts at other global financial institutions,
             the DB CISO is reviewing its existing capability models and considering enhancements to address not only changes in the risk environment, but also strategic business and management challenges. Specific factors requiring capability development include: cybersecurity risks that affect corporate performance, pressures to deliver financial and operating efficiencies across stove-piped IT and engineering, and stakeholder management.</p></div></div></div>
     </div>
+
+
+
+
+
+    <!--Send a email form-->
+
+    <div class="career-email">
+      <h1 class="container reveal fade-left" style="text-align: center;">SEND US A MESSAGE</h1>
+     
+      <div class="card-body">
+        <div class="card-inputs" style="margin-top:50px;">
+          
+            <input type="text" class="form-control" id="thename" placeholder="Enter Name">
+          
+            <input type="email" class="form-control" id="themail" placeholder="Enter Email">
+            
+            <textarea class="form-control" id="themsg" placeholder="Enter Message" rows="6"></textarea>
+
+<div class="btn4">
+  <button onCLick="sendemail();"> <span>SEND</span>
+    <span class="btn4Before"></span>
+    <span class="btn4After"></span></button>
+</div>
+           
+           
+        </div>
+      </div>
+    </div>
+
+
+
+
+
           </section>
 
 
@@ -338,8 +376,42 @@ window.onclick = function(event) {
     }
   }
 }
-</script>
 
+
+/*Send an email function*/
+function sendemail() {
+      var userid = "EAaWSjwp5ZWMemAQA"
+      emailjs.init(userid);
+      var thename = document.getElementById('thename').value;
+      var themail = document.getElementById('themail').value;
+      var themsg = document.getElementById('themsg').value;
+      var validmail = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+      if (thename == "") {
+        alert("Please Enter Name");
+      }
+      else if (themail == "" || themail.match(!validmail)) {
+        alert("Please Enter Valid Email");
+      }
+
+      else if (themsg == "") {
+        alert("Please Enter Message");
+      }
+      else {
+        var contactdetail = {
+          from_name: thename,
+          from_email: themail,
+          message: themsg
+        };
+
+        emailjs.send('service_4s67ud1', 'template_ac6u2g5', contactdetail).then(function (res) {
+          alert("Email Sent Successfully");
+        },
+          reason => {
+            alert("Error Occur");
+          })
+      }
+    }
+</script>
 
     </body>
 </html>
