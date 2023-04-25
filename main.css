@@ -1384,9 +1384,125 @@ grid-area: biotxt;
   color:#8281BB;
 }
 
+
+
+
+/*Capabilities page*/
+
+.capabilities{
+  display: block;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  margin-top: 100px;
+  grid-gap: 3rem;
+}
+
+
+
+.cap-txt p {
+ margin: 30px;
+
+}
+
+.cap-txt h1 {
+  font-size: calc(12px + 1vw);
+  color: #5c4eff;
+ }
+ .cap-txt{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+@media only screen and (min-width: 900px){
+  .capabilities {
+    display: flex;
+  }
+  .cap-txt{
+    flex: 1;
+  }
+}
+
+
+@media only screen and (min-width: 1025px){
+  .cap-txt {
+    flex: 2;
+  }
+ 
+}
+
+
+
+/*contract page*/
+
+.contract-info{
+  display: block;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  margin-top: 240px;
+  grid-gap: 10rem;
+}
+
+
+.contract-number {
+  height: 100%;
+}
+
+.contract-number p {
+ margin: 30px;
+}
+
+.conslt-srv, .contract-number{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+    .conslt-srv h3{
+    color: rgb(40, 40, 40);
+    text-align: center;
+    font-size: 23px;
+    color: #2b20aa;
+    }
+
+
+@media only screen and (min-width: 900px){
+  .contract-info {
+    display: flex;
+  }
+  .contract-number, .conslt-srv {
+    flex: 1;
+  }
+}
+
+
+@media only screen and (min-width: 1025px){
+  .contract-number {
+    flex: 2;
+  }
+  .conslt-srv {
+    flex: 1;
+  }
+}
+
+.rsn-txt  li{
+display:block;
+text-align: left;
+
+}
+
+
+    
+ 
+
+
 /*Arrow*/
-
-
 
 .arrow1{
   
@@ -1526,10 +1642,9 @@ box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 width: 100%;
 height: 100%;
 transition: transform 0.5s ease-in-out;
-
 }
 .rsn-txt{
-margin: 40px;
+margin: 30px;
 }
 
 
@@ -1564,13 +1679,14 @@ background-color: #ffffff;
 border-radius: 10px;
 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 max-width: 1000px;
-height: 100%;
+height:70%;
 top: 0;
 bottom: 0;
 left: 0;
 right: 0;
 margin: auto;
 margin-top: 200px;
+margin-bottom: 200px;
 }
 
 
@@ -1701,6 +1817,18 @@ min-width: 250px;
 li{
   list-style: none;
   line-height: 4rem;
+}
+
+.cust1{ border-radius: 12px;min-width: 290px;height:400px;background-image:linear-gradient(0deg, rgba(2, 17, 24, 0.868) 15%, rgba(0, 65, 78, 0) 90%), url("images/36565395680_51dc9a84f9_o.webp");background-size: cover;}
+.cust2{ border-radius: 12px;min-width: 290px;height:400px; background-image:linear-gradient(0deg, rgba(2, 17, 24, 0.868) 15%, rgba(0, 65, 78, 0) 90%), url("images/20160516-SNL-montage.jpeg");background-size: cover;}
+.cust3{ border-radius: 12px;min-width: 290px;height:400px; background-image: linear-gradient(0deg, rgba(2, 17, 24, 0.868) 15%, rgba(0, 65, 78, 0) 90%),url("images/00deutsche1-superJumbo.jpeg");background-size: cover;}
+
+.cust1:hover .overly,
+.cust2:hover .overly,
+.cust3:hover .overly{
+opacity: 1;
+border-radius: 12px;
+
 }
 
 /** Teams**/
@@ -1977,6 +2105,7 @@ overflow: hidden;
 
 @media (min-width: 900px) {
 .services{ grid-template-columns: repeat(2, 1fr); }
+
 }
 
 
@@ -2384,12 +2513,9 @@ border: 1px solid #d3d7da;
 border-radius: 10px;
 }
 
-.cntct-info{
-padding-top: 2rem;
-padding-bottom: 2rem;
-}
 
-.cntct-info li{
+
+.cntct-info ul li {
 list-style: none;
 line-height: 2rem;
 display: block;
