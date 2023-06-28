@@ -1392,37 +1392,39 @@ grid-area: biotxt;
 
 .capabilities{
   display: block;
-  grid-template-columns:  1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
+  grid-template-columns:  2fr 2fr;
+  grid-template-rows: 2fr;
   margin-top: 100px;
-  grid-gap: 3rem;
+  grid-gap: 5rem;
 }
-
-
 
 
 .cap-txt p {
  margin: 30px;
-
+ line-height: 40px;
 }
 
 .cap-txt h1 {
   font-size: calc(12px + 1vw);
   color: #5c4eff;
+  
  }
  .cap-txt{
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-radius: 10px;
   transition: transform 0.5s ease-in-out;
+  padding: 20px;
+  border-top: solid 10px #5c4eff;
+ 
 }
 
 
 
 @media only screen and (min-width: 900px){
   .capabilities {
-    display: flex;
+    display: grid;
+    
   }
   .cap-txt{
     flex: 1;
