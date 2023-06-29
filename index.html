@@ -107,7 +107,7 @@ editor: Larry Ohaka
                 <p>A leading privider of program management, risk assessment, and security governance</p>
                 <div class="btn3">
                   <a href="./about.html">
-                    <span>About</span>
+                    <span>Learn More</span>
                     <span class="btn1Before"></span>
                     <span class="btn1After"></span>
                 </a>
@@ -274,7 +274,7 @@ editor: Larry Ohaka
               
               <div class="btn6">
                 <a href="./services.html">
-                  <span style="color: rgb(49, 49, 49);">Carrers <b style="color: #2b20aa;">→</b></span>
+                  <span style="color: rgb(49, 49, 49);">CAREERS <b style="color: #2b20aa;">→</b></span>
                   <span class="btn1Before"></span>
                   <span class="btn1After"></span>
                 </a>
@@ -291,34 +291,68 @@ editor: Larry Ohaka
       <div class="services">
       <div class="srv-slide">
 
-      <div class="carousel-section">
-        <div class="carousel-container">
-          <div class="carousel">
-            <img src="images/cyberattack-cybersecurity-generic-1646086552.jpeg" alt="Image 1">
-            <img src="images/pexels-aaron-kittredge-129112.jpg" alt="Image 2">
-            <img src="images/cyberattack-cybersecurity-generic-1646086552.jpeg" alt="Image 3">
-          </div>
-         
-          </div>
-          <div class="carousel-indicators">
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+
+
+
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide">
+        <img src="images/cyberattack-cybersecurity-generic-1646086552.jpeg" alt="Image 1" >
+        <div class="slide-text" style="background-image: linear-gradient(0deg, rgb(0, 7, 9) 5%, rgba(1, 14, 17, 0.087) 100%)">
+          <h3>DYNAMIC THREATS</h3>
+          <p>Cybersecurity threats have continuously expanded since the creation of the Department of Homeland Security by Congress. During this time, cybersecurity actors have persistently attacked Federal Civilian Executive Branch (FCEB) entities for myriad of reasons.</p>
+          <div class="btn6">
+            <a href="./nef.html">
+              <span>Learn More</span>
+              <span class="btn1Before"></span>
+              <span class="btn1After"></span>
+            </a>
           </div>
         </div>
+      </div>
+      <div class="slide">
+        <img src="images/pexels-aaron-kittredge-129112.jpg" alt="Image 2">
+        <div class="slide-text" style="background-image: linear-gradient(0deg, rgb(0, 7, 9) 5%, rgba(1, 14, 17, 0.087) 100%)">
+          <h3>COUNTLESS VULNERABILITES</h3>
+          <p>Threat actors have seen expanded opportunities over the past 25 years. The delivery of essential services now relies on resilient and protected information technology platforms. </p>
+          <div class="btn6">
+            <a href="./nef.html">
+              <span>Learn More</span>
+              <span class="btn1Before"></span>
+              <span class="btn1After"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/pexels-cottonbro-studio-5483075.jpg" alt="Image 3">
+        <div class="slide-text" style="background-image: linear-gradient(0deg, rgb(0, 7, 9) 5%, rgba(1, 14, 17, 0.087) 100%)">
+          <h3>LACK OF RISK MODELS</h3>
+          <p>Threats and vulnerabilities have expanded over the past 25 years, yet the security community has notkept pace in developing repeatable frameworks to effectively manage risks.</p>
+          <div class="btn6">
+            <a href="./nef.html">
+              <span>Learn More</span>
+              <span class="btn1Before"></span>
+              <span class="btn1After"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="indicators">
+    <span class="indicator active" onclick="changeSlide(0)"></span>
+    <span class="indicator" onclick="changeSlide(1)"></span>
+    <span class="indicator" onclick="changeSlide(2)"></span>
+  </div>
+</div>
 
 
         <div class="sec-1-1-slide">
-          <h1 style="color: rgb(49, 49, 49);">Join ZRA</h1>
+          <h1 style="color: rgb(49, 49, 49);">NEW ENVORNMENTAL FACTORS</h1>
           <div class="call-2-act-2">
-            
-            <div class="btn6">
-              <a href="./services.html">
-                <span style="color: rgb(49, 49, 49);"><b style="color: #2b20aa;">←</b> Carrers</span>
-                <span class="btn1Before"></span>
-                <span class="btn1After"></span>
-              </a>
-            </div>
+                <span style="color: rgb(49, 49, 49);"><b style="color: #2b20aa;">←</b> TAKE A LOOK</span>
           </div>
       </div>
     </div>
@@ -544,49 +578,45 @@ $(window).scroll(function() {
   
 
 // Carousel images
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.querySelector('.carousel');
-  const indicators = document.querySelectorAll('.indicator');
-  let currentIndex = 0;
-  let timer;
+let slideIndex = 0;
+const slidesContainer = document.querySelector('.slides');
+const slides = document.getElementsByClassName('slide');
+const indicators = document.getElementsByClassName('indicator');
 
-  function slideTo(index) {
-    const slideWidth = carousel.offsetWidth;
-    const translateValue = -slideWidth * index;
-    carousel.style.transform = `translateX(${translateValue}px)`;
-    currentIndex = index;
-    updateIndicator();
+function showSlide(index) {
+  // Calculate the translateX value based on the index
+  const translateXValue = -index * slides[0].offsetWidth;
+  
+  // Apply the transformation to the slides container
+  slidesContainer.style.transform = `translateX(${translateXValue}px)`;
+
+  // Remove active class from all indicators
+  for (let i = 0; i < indicators.length; i++) {
+    indicators[i].classList.remove('active');
   }
 
-  function slideNext() {
-    const nextIndex = (currentIndex + 1) % indicators.length;
-    slideTo(nextIndex);
+  // Set the corresponding indicator as active
+  indicators[index].classList.add('active');
+}
+
+function changeSlide(index) {
+  slideIndex = index;
+  showSlide(slideIndex);
+}
+
+function nextSlide() {
+  slideIndex++;
+  if (slideIndex === slides.length) {
+    slideIndex = 0;
   }
+  showSlide(slideIndex);
+}
 
-  function startSlideShow() {
-    timer = setInterval(slideNext, 3000); // Change slide every 3 seconds (adjust as needed)
-  }
+// Show the initial slide
+showSlide(slideIndex);
 
-  function stopSlideShow() {
-    clearInterval(timer);
-  }
-
-  function updateIndicator() {
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === currentIndex);
-    });
-  }
-
-  startSlideShow();
-
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      stopSlideShow();
-      slideTo(index);
-      startSlideShow();
-    });
-  });
-});
+// Automatically change slide every 3 seconds
+setInterval(nextSlide, 3000);
 
 
     </script>
