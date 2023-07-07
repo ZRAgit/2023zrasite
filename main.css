@@ -2426,18 +2426,20 @@ text-align: center;
 /**Footer*/
 footer{ 
 z-index: 1;
-left: 0;
 width: 100vw;
 position:relative;
+bottom: 0;
+left: 0;
+right: 0;
 background: rgb(0, 0, 0);
 background: linear-gradient(90deg, rgb(0, 0, 0) 38%, rgb(4, 0, 10) 100%);
-
+padding: 20px;
+height: auto;
 }
 
 
 .side-logo img{
-padding-right: 20px;
-width: 30%;
+width: 10%;
 max-width: 300px;
 min-width: 100px;
 position: relative;
@@ -2460,8 +2462,6 @@ position: relative;
 
 /* 2-col Layout */
 @media (min-width: 400px) {
-
-
 .side-logo {  
 color: #ffffff;
 text-align: center;
