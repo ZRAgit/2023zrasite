@@ -1212,10 +1212,13 @@ video{
   z-index: 2;
   background: #2b20aa;
   width: 40%;
-  padding: 20px;
   float: right;
   height: 65vh; 
+ 
 }
+
+
+
 
 .srv-vid {
   height: 65vh; 
@@ -1234,7 +1237,12 @@ video{
 }
 
 .call-2-act-2{
-  width: 100%;
+  top: 0;
+ bottom: 0;
+ right: 0;
+ left: 0;
+ margin: auto;
+ width: 80%;
 }
 
   
@@ -2163,6 +2171,7 @@ background: linear-gradient(339deg, rgba(2,0,36,1) 0%, rgba(2,2,38,1) 35%, rgba(
   left: 0;
   right: 0;
   margin: auto;
+  height: auto;
 width:100%;
 position: relative;
 }
@@ -2829,13 +2838,12 @@ color: #363636;
         z-index: 3;
        font-size: calc(40px + 1vw);
         }
-       
-          .slide-text h3 {
-            font-size: 24px;
-            color: rgb(235, 62, 62);
-            margin-top: 60vh;
+        .carousel-container {
+          height: 75vh;
           }
-            
+       .slide-text{
+        padding-top:30% ;
+       }
     
       .sec-1-1-slide h1{
         z-index: 3;
@@ -2847,8 +2855,7 @@ color: #363636;
           background: #11096cb3;
           width: 100%;
           padding: 20px;
-          float: right;
-          height: 40vh; 
+          height: 40vh auto; 
           mix-blend-mode:luminosity;
         }
         .sec-1-1-vid h1{
@@ -2856,13 +2863,13 @@ color: #363636;
         }
         .sec-1-1-vid p{
           font-size: 15px;
-          line-height:calc(15px + 1vw);
+          line-height:calc(20px + 1vw);
          }
         .srv-vid {
-          height: 40vh; 
+          height: 40vh auto; 
           }
           .srv-vid video{
-            height: 40vh; 
+            height: 40vh auto; 
             }
            .call-2-act-2 p{
               top: 0;
