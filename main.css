@@ -2514,10 +2514,8 @@ font-size: 10px;
 .cnct-info{
 color: #ffffff;
 text-align: center;
-display:inline-flex;
 grid-area: ftr4;
 display: block;
-position: relative;
 }
 
 .side-logo {  
@@ -2525,8 +2523,7 @@ top: 0;
 right: 0;
 left: 0;
 bottom: 0;
-margin: 0 auto;
-width: 80%;
+margin:  auto;
 text-align: center;
 grid-area: ftr1;
 position: relative;
@@ -2551,8 +2548,12 @@ grid-area: ftr3;
 
 
 .bottom-info> div{
-width: 100%;
-padding: 20px;
+display: inline-flex;
+top: 0;
+bottom: 0;
+right:0 ;
+left: 0;
+margin: auto;
 }
 
 
