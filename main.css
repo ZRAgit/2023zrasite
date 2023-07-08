@@ -27,7 +27,7 @@ main{
   left: 0;
   right: 0;
   margin: auto;
-  
+  position: relative
 }
 
 p{
@@ -1062,8 +1062,9 @@ input:checked~.dropdown-content0,input:checked~.dropdown-content,input:checked~.
   position: relative;
   top: 0;
   left: 0;
- 
 }
+
+
 .overlay0{
   width: 100vw;
   height: 65vh;
@@ -1072,7 +1073,7 @@ input:checked~.dropdown-content0,input:checked~.dropdown-content,input:checked~.
   top: 0;
   left: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(0, 8, 15, 0.635) 30%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(180deg, rgba(0, 8, 15, 0.756) 30%, rgb(255, 255, 255) 100%);
 }
 
 .overlay1{
@@ -1277,7 +1278,8 @@ color: #5c4eff;
   position: absolute;
   z-index: 2;
   text-align: center;
-  height: 20vh;
+  height: 30%;
+  margin-top: 40vh;
 }
 
 .sec-a-1-2{
@@ -1632,8 +1634,9 @@ left: 0;
 right: 0;
 margin: auto;
 padding: 50px;
-
+position: relative;
 max-width: 1200px;
+
 }
 /**About Page**/
 
@@ -2444,6 +2447,7 @@ background: rgb(0, 0, 0);
 background: linear-gradient(90deg, rgb(0, 0, 0) 38%, rgb(4, 0, 10) 100%);
 padding: 20px;
 height: auto;
+
 }
 
 
@@ -2461,10 +2465,9 @@ right: 0;
 left: 0;
 margin: auto;
 max-width: 1200px;
-padding: 30px;
 display: grid;
-grid-gap: 3rem;
 position: relative;
+height: auto;
 }
 
 
@@ -2545,6 +2548,7 @@ text-align: center;
 display:inline-flex;
 grid-area: ftr2;
 position: relative;
+height: 100px;
 }
 
 .bottom-info2 {
@@ -2556,7 +2560,7 @@ grid-area: ftr3;
 }
 
 
-.bottom-info> div{
+.bottom-info> a{
 display: inline-flex;
 top: 0;
 bottom: 0;
