@@ -2856,11 +2856,11 @@ color: #363636;
         .sec-1-1-vid{
           position: relative;
           z-index: 2;
-          background: #11096cb3;
+          background: #11096cd9;
           width: 100%;
           padding: 20px;
           height: 40vh auto; 
-          mix-blend-mode:luminosity;
+          
         }
         .sec-1-1-vid h1{
          font-size: calc(40px + 1vw);
