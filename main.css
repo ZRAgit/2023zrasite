@@ -167,7 +167,7 @@ nav.navbar.transparent a {
   padding: 0;    
   display: none;
   position: relative;
-  z-index: 999;
+
   width: 100%;
   background: #454545;
 }
@@ -185,7 +185,7 @@ nav.navbar.transparent a {
 }
 .menu1 ul li a {
   width:100%;
-  padding:19px 19px;
+ height: auto;
   display:inline-block;
   clear:both;
   box-sizing:border-box;
@@ -207,7 +207,7 @@ nav.navbar.transparent a {
   }
   .menu1 > li > a{
     width: 100%;
-    padding: 40px 90px 16px 18px;
+    padding: 20px 90px 23px 18px;
     text-align: left;
     border-top: solid 1px rgba(255, 255, 255, 0.05);
     box-sizing:border-box;
@@ -372,8 +372,17 @@ line-height: 3rem;
 
 
 
-.bar1, .bar2, .bar3 {
+.bar1, .bar2 {
   width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+ .bar3 {
+  width: 18px;
   height: 3px;
   background-color: #ffffff;
   margin: 6px 0;
