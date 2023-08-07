@@ -75,7 +75,7 @@ a:hover{
   color: #8281BB;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  font-size: 110%;
+  font-size: 100%;
 }
 
 
@@ -123,7 +123,6 @@ nav.navbar.transparent a {
   margin: auto;
   width: 90%;
   padding: 0;
-  
   background:none;
   list-style: none;
   float: right;
@@ -143,15 +142,34 @@ nav.navbar.transparent a {
   color: #FFF;
   text-decoration: none;
   display: inline-block;
+  -o-transition: color .3s linear, border-top .3s linear;
+  -webkit-transition: color .3s linear, border-top.3s linear;
+  -moz-transition: color .3s linear, border-top.3s linear;
+  transition: color .3s linear, border-top .3s linear;	
+  border-top: solid 2px #5d4eff00;
+}
+
+.menu1 li:hover > a{
+  color: #c0c0c0;
+  border-top: solid 2px #5c4eff;
+}
+
+.menu1 ul li:hover > a{
+  color: #c0c0c0;
+  border-top: none;
+}
+
+.menu1 ul li a {
+  padding: 15px 20px 15px;
+  color: #FFF;
+  text-decoration: none;
+  display: inline-block;
   -o-transition: color .3s linear, background .3s linear;
   -webkit-transition: color .3s linear, background .3s linear;
   -moz-transition: color .3s linear, background .3s linear;
-  transition: color .3s linear, background .3s linear;	
+  transition: color .3s linear, background  .3s linear;	 
 }
-.menu1 li:hover > a{
-  color: #333;
-  background:rgb(229,228,226);
-}
+
 .menu1 li.active > a{
   background:rgb(229,228,226);
   color:#000;
@@ -726,14 +744,15 @@ color: white;
   }
   
   .btn3, button { 
-    min-width: 40%;
-    margin: 0 auto;
-    display: grid;
+    max-width: 100%;
+    margin:  auto;
+    display: flex;
     text-align: center;
   }
 
   .btn3, span { 
-     color: white
+     color: white;
+     
     }
 
   .btn3, .lrn-mr { 
@@ -771,6 +790,12 @@ color: white;
           }
     .btn1{ grid-template-columns: repeat(1, 1fr); 
   }
+  }
+  
+
+
+  @media (max-width: 1200px){
+    .btn3{display: grid}
   }
   
   @media (min-width: 900px) {
@@ -1277,11 +1302,132 @@ color: #5c4eff;
 
 .call-2-act p{
   color: white;
-
 }
+
 .call-2-act{
   width: 60%;
 }
+
+/* Home page banner slide show*/
+
+.slideshow-container {
+  width: 100%;
+  height: 17vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.itemtxt {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.itemtxt h1 {
+  font-size: 18px;
+  text-align:left;
+  margin: 0;
+  color: white;
+}
+
+.itemtxt h2 {
+  font-size: 20px;
+  color: white;
+}
+
+@keyframes fadeInFromRight {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutToRight {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: -100%;
+    opacity: 1;
+  }
+}
+
+.indicatorsa {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  border-radius: 40px;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(194, 194, 194, 0.452);
+  margin-top: 30px;
+}
+
+.indicatora {
+  width: 10px;
+  height: 10px;
+  background-color: #c8c8c8;
+  border-radius: 50%;
+  margin: 5px;
+ 
+}
+
+.title-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 25;
+  right: 0;
+  left: 0;
+  height: 20px;
+  margin: auto;
+}
+
+.title {
+  padding: 10px;
+  font-size: 15px;
+  transition: color 0.5s ease-in-out;
+}
+
+.title.active {
+  color: #5c4eff;
+}
+
+
+
+.time-scale {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #5c4eff;
+  border-radius: 40px;
+  animation: growWidth 6s linear infinite;
+  margin-top: 30px;
+}
+
+@keyframes growWidth {
+  to {
+    width: 100%;
+  }
+}
+
+
+
 
 .sec-a-1-1{
   top: 0;
@@ -1566,6 +1712,9 @@ grid-area: biotxt;
 
 
 @media only screen and (min-width: 1025px){
+
+  
+  
   .contract-number {
     flex: 2;
   }
@@ -1877,6 +2026,8 @@ margin: auto;
 }
 
 @media (min-width: 1200px){
+
+  
 .sec-2-2 {
   grid-template-columns: repeat(2,1fr);
 }
@@ -2862,6 +3013,13 @@ color: #363636;
 
     
 @media  (max-width: 900px){
+
+  .itemtxt h1 {
+    font-size: 18px;
+    text-align:center;
+    margin: 0;
+    color: white;
+  }
   .srv-slide {
     width: 100%;
     height:65vh;

@@ -27,20 +27,14 @@ editor: Larry Ohaka
         <nav class="navbar navbar-inverse  navbar-fixed-top"> 
 
           <div class="header-line">
-            <div id="call">
-             Call: (703) 351-1101
-            </div>
+     
             <div id="loctn">
               Arlington, VA
              </div>
-             <div id="time">
-              Mon-Fri 9am-5pm
-             </div>
-      
              <div class="sc-med">
               <a href="#"><img src="images/LINKEDIN_ZRA.png" style="width:17px"></a>
              </div>
-             
+            
           </div>
           <hr>
       
@@ -103,17 +97,49 @@ editor: Larry Ohaka
 
 
               <div class="call-2-act">
-                
-                <p>A leading provider of program management, risk assessment, and security governance</p>
-                <div class="btn3">
-                  <a href="./about.html">
-                    <span>Learn More</span>
-                    <span class="btn1Before"></span>
-                    <span class="btn1After"></span>
-                </a>
-               
-                </div>
+                <div class="slideshow-container">
+                  <div class="itemtxt" style="display: block;">
+                    <h2>Empowering Organizations </h2>
+                    <h1>A leading provider of program management, risk assessment, and security governance</h1>
+                  </div>
+                  
+                  <div class="itemtxt">
+                    <h2>End-to-End Cybersecurity</h2>
+                    <h1>Our comprehensive methodologies cover the entire cybersecurity lifecycle, from initial assessment to ongoing monitoring and improvement</h1>
+                  </div>
 
+                  <div class="itemtxt">
+                    <h2>Tailored Solutions</h2>
+                    <h1>Our client-centric approach begins by thoroughly understanding their unique challenges, enabling us to
+                      develop tailored solutions that address their specific needs</h1>
+                  </div>
+
+                  <div class="itemtxt">
+                    <h2> Innovative Cybersecurity</h2>
+                    <h1>We consistently stay ahead of the curve, leveraging the latest best practices and industry trends to deliver innovative cybersecurity solutions</h1>
+                  </div>
+                
+                </div>
+                
+         <div class="btn3">   
+          <a href="./about.html">
+          <span>Learn More</span>
+          <span class="btn1Before"></span>
+          <span class="btn1After"></span>
+      </a>
+     </div>
+
+     <div class="title-container">
+      <div class="title">Empowering Organizations</div>
+      <div class="title">End-to-End Cybersecurity</div>
+      <div class="title">Tailored Solutions</div>
+      <div class="title">Innovative Cybersecurity</div>
+    </div>
+     <div class="indicatorsa"></div>
+     <div class="time-scale"></div>
+                </div>
+              
+            
               </div>
 
 </div>
@@ -459,6 +485,7 @@ editor: Larry Ohaka
                   <a href="./services.html">SERVICES</a>
                   <a href="./careers.html">CAREERS</a>
                   <a href="./about.html">ABOUT</a>
+            
                 
               </div>
     
@@ -469,12 +496,14 @@ editor: Larry Ohaka
                   <span class="btn2Before"></span>
                   <span class="btn2After"></span>
               </a>
-              </div>or <br>(703) 351 - 1101<br>N. Fairfax Dr. Suite 1130 <br>Arlington, VA 222033</div>
+              </div><br>(703) 351 1101<br> 4601 N. Fairfax Dr. Suite 1130 <br>Arlington, VA 22203</div>
 
 
-              <div class="bottom-info2">
+            <!--
+<div class="bottom-info2">
                 <p>Privacy      |    Terms of Use     |     Compliance</p>
               </div>
+            -->  
             </div>
           
                   </footer>
@@ -617,6 +646,82 @@ showSlide(slideIndex);
 
 // Automatically change slide every 3 seconds
 setInterval(nextSlide, 3000);
+
+
+
+//This is the script for the slideshow on the homepage banner
+
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".itemtxt");
+  const indicatorsContainer = document.querySelector(".indicatorsa");
+  const timeScale = document.querySelector(".time-scale");
+  let currentItem = 0;
+
+  function showNextItem() {
+    const currentItemElem = items[currentItem];
+    currentItemElem.style.display = "block";
+    currentItemElem.style.animation = "fadeInFromRight 1s forwards";
+
+    setTimeout(() => {
+      currentItemElem.style.animation = "fadeOutToRight 1s forwards";
+      setTimeout(() => {
+        currentItemElem.style.display = "none";
+        currentItemElem.style.left = "100%";
+      }, 1000); // Adjust this time based on your fadeOutToRight animation duration
+    }, 6000);
+    currentItem = (currentItem + 1) % items.length;
+    updateIndicators();
+  }
+
+  function updateIndicators() {
+    const indicators = document.querySelectorAll(".indicatora");
+    indicators.forEach((indicator, index) => {
+      indicator.classList.remove("active");
+      if (index === currentItem) {
+        indicator.classList.add("active");
+      }
+    });
+  }
+
+  // Show the first item initially
+  showNextItem();
+
+  // Automatically change the item every 7 seconds (6s visible + 1s fading out)
+  setInterval(showNextItem, 6000);
+});
+
+
+//title timeline
+
+document.addEventListener("DOMContentLoaded", function () {
+  const titles = document.querySelectorAll(".title");
+  const highlightDuration = 6000; // 6 seconds
+  let currentTitle = 0;
+
+  function highlightTitle(index) {
+    titles.forEach((title, i) => {
+      if (i === index) {
+        title.classList.add("active");
+      } else {
+        title.classList.remove("active");
+      }
+    });
+  }
+
+  function showNextTitle() {
+    highlightTitle(currentTitle);
+    currentTitle = (currentTitle + 1) % titles.length;
+  }
+
+  // Highlight the first title immediately on page load
+  highlightTitle(currentTitle);
+
+  // Automatically change the highlighted title every highlightDuration
+  setInterval(showNextTitle, highlightDuration);
+
+  // Run the showNextTitle function initially to set up the sequence
+  showNextTitle();
+});
 
 
     </script>
