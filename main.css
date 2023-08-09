@@ -3041,7 +3041,6 @@ color: #363636;
 
 .srv-img-1 {
 position:relative;
-height: flex;
 top: 0;
 bottom: 0;
 left: 0;
@@ -3053,9 +3052,32 @@ padding: 40px;
 text-align: center;
 height: 55vh; 
 display: flex;
-
-
 }
+
+.srv-img-1-txt {
+  position:relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 1200px;
+  width:80%;
+  text-align:left;
+  
+  }
+
+  .srv-img-1-txt h2{
+    line-height: 30px;
+    
+    }
+
+    .srv-img-1-txt b{
+      color: #5c4eff;
+      line-height: 0px;
+      
+      }
+  
 
 .info-slide {
 height: 55vh; 
@@ -3076,6 +3098,50 @@ background: #dbdae2;
 width: 70%;
 float: left;
 height: 55vh; 
+
+}
+
+.gallery-container1 {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  position: relative;
+  height: 55vh;
+}
+
+
+.gallery-container1::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+
+@media (max-width: 900px) {
+  .info-slide{
+    visibility: hidden;
+    width: 0%;;
+  }
+  
+  .sec-1-2-img{
+    width: 100%;
+    max-width: none;
+    border-top: 9px solid #5c4eff;
+  }
+
+  .gallery-container1{
+    background-image:linear-gradient(0deg, rgba(9, 35, 47, 0.546) 15%, rgba(7, 18, 33, 0.617) 100%), url("images/rodeo-project-management-software-ONe-snuCaqQ-unsplash.jpg");background-size: cover;
+  }
+
+  
+}
+
+@media (min-width: 900px){
+
+.srv-img-1-txt {
+  visibility: hidden;
+  
+  }
 }
 
 .sec-1-2-img h1{
@@ -3085,6 +3151,10 @@ color: #363636;
 .sec-1-2-img span{
 color: #363636;
 }
+
+.scroll-button  span{
+  color: #fbfbfb;
+  }
 
 .sec-1-2-img b{
 color:  #2b20aa;;
@@ -3376,21 +3446,6 @@ text-align: center;
 
 
 
-.gallery-container1 {
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  position: relative;
-  
-  height: 55vh;
-}
-
-
-.gallery-container1::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-}
 
 .gallery-item {
   flex: 0 0 50%;
