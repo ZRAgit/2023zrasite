@@ -316,6 +316,7 @@ function sendemail() {
           interest: interest,
           message: themsg
         };
+      
 
         emailjs.send('service_4s67ud1', 'template_ac6u2g5', contactdetail).then(function (res) {
           alert("Email Sent Successfully");
