@@ -2979,14 +2979,20 @@ border-radius: 10px;
 
 
 
-.cntct-info ul li {
+.cntct-info  li {
 list-style: none;
 line-height: 2rem;
 display: block;
 }
 
+.cntct-info  p{
+  line-height: 1.5rem;
+ 
+  }
+  
+
 .cntct-grid { 
-max-width: 1050px;
+max-width: 1070px;
 margin: 0 auto;
 display: grid;
 gap: 20px;
@@ -3009,8 +3015,18 @@ grid-template-columns:  repeat(2, 1fr);
 grid-template-columns:  repeat(2, 1fr);
 }
 
-
 }
+
+
+@media (max-width: 600px) {
+  .cntct-grid p{ 
+    max-width: 330px; 
+  }
+  iframe {
+    max-width: 400px;
+  }
+}
+
 
 
 
